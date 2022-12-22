@@ -1,0 +1,40 @@
+﻿@model IEnumerable<lb4.Models.City>
+@{
+    ViewData["Title"] = "Cities";
+}
+
+<h1>Cities</h1>
+<a asp-controller="City" asp-action="Create" class="btn btn-success">Add city</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Code</th>
+      <th scope="col">Tariff</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+       @foreach(var city in Model)
+        {
+            <tr>
+                <th scope="row">
+                    @city.Name
+                </th>
+                <td>
+                    @city.Code
+                </td>
+                <td>
+                    @city.Tariff
+                </td>
+                <td>
+                    <a asp-controller="City" asp-action="Edit" asp-route-id="@city.Id" class="btn btn-info">Edit city</a>
+                </td>
+                <td>
+                    <a asp-controller="City" asp-action="Delete" asp-route-id="@city.Id" class="btn btn-danger">Delete city</a>
+                </td>
+            </tr>
+        }
+  </tbody>
+</table>

@@ -1,0 +1,40 @@
+﻿@model Conversation
+
+<h1>Add new conversation</h1>
+<form method="post">
+  <div class="form-group row">
+	  <label>Abonent</label>
+	  <div class="col-sm-8">
+		  <select asp-for="AbonentId" asp-items="@ViewBag.Abonents">
+			<option>Choose abonent</option>
+		  </select>
+		  <span asp-validation-for="AbonentId"></span>
+	  </div>
+  </div>
+  <div class="form-group row">
+		<label>City</label>
+		<div class="col-sm-8">
+			<select asp-for="CityId" asp-items="@ViewBag.Cities">
+				<option>Choose city</option>
+			</select>
+			<span asp-validation-for="CityId"></span>
+		</div>
+  </div>
+   <div class="form-group row">
+		<label>DateConversation</label>
+		<div class="col-sm-8">
+			<input asp-for="DateConversation"/>
+			<span asp-validation-for="DateConversation"></span>
+		</div>
+  </div>
+  <div class="form-group row">
+		<label>Duration</label>
+		<div class="col-sm-8">
+			<input asp-for="Duration"/>
+			<span asp-validation-for="Duration"></span>
+		</div>
+  </div>
+  <div class="col-sm-8 pt-2">
+	  <button type="submit">Add conversation</button>
+  </div>
+</form>

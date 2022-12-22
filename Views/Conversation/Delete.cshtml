@@ -1,0 +1,36 @@
+﻿@model Conversation
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete conversation</h1>
+<form method="post" asp-action="DeleteConvsersation">
+	<input asp-for="Id" hidden />
+	<div class="form-group row">
+	  <label>Abonent</label>
+	  <div class="col-sm-8">
+		<input asp-for="Abonent.FirstName" disabled />
+	  </div>
+  </div>
+  <div class="form-group row">
+		<label>City</label>
+		<div class="col-sm-8">
+			<input asp-for="City.Name" disabled />
+		</div>
+  </div>
+   <div class="form-group row">
+		<label>DateConversation</label>
+		<div class="col-sm-8">
+			<input asp-for="DateConversation" disabled />
+		</div>
+  </div>
+  <div class="form-group row">
+		<label>Duration</label>
+		<div class="col-sm-8">
+			<input asp-for="Duration" disabled />
+		</div>
+  </div>
+  <div class="col-sm-8 pt-2">
+	  <button type="submit">Delete conversation</button>
+  </div>
+</form>

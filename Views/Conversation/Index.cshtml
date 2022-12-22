@@ -1,0 +1,39 @@
+﻿@model IEnumerable<lb4.Models.Conversation>
+@{
+    ViewData["Title"] = "Conversations";
+}
+<h1>Conversations</h1>
+<a asp-controller="Conversation" asp-action="Create" class="btn btn-success">Add conversation</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Abonent</th>
+      <th scope="col">City</th>
+      <th scope="col">DateConversation</th>
+      <th scope="col">Duration</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach(var conversation in Model)
+        {
+            <tr>
+                <th scope="row">
+                    @conversation.Abonent.FirstName
+                </th>
+                <td>
+                    @conversation.City.Name
+                </td>
+                <td>
+                    @conversation.DateConversation
+                </td>
+                <td>
+                    @conversation.Duration
+                </td>
+                <td>
+                    <a asp-controller="Conversation" asp-action="Delete" asp-route-id="@conversation.Id" class="btn btn-danger">Delete conversation</a>
+                </td>
+            </tr>
+        }
+  </tbody>
+</table>
